@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Règles du jeu - Skull King</title>
+  <link rel="stylesheet" href="CSS_regles_sk_E.css">
+</head>
+<body>
+  <!-- En-tête du site, créé ensemble -->
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Skull King</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index_sk_E.html">Accueil</a></li>
+          <li><a href="binome_sk_E.html">Le Binôme</a></li>
+          <li><a href="regles_sk_E.html">Règles</a></li>
+          <li><a href="code_sk_E.html">Code</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenu principal : explication des règles -->
+  <main class="section">
+    <div class="container">
+      <div class="texte">
+        <h2>Les règles du jeu Skull King (Selon notre version)</h2>
+        <p>
+          Skull King est un jeu de plis mêlant stratégie, bluff et anticipation. Le but du jeu est de remporter exactement le nombre de plis prédit (la mise) au début de chaque manche.
+        </p>
+       
+        <h3>Cartes et hiérarchie</h3>
+        <img src="carte_sk.jpg" alt="carte">
+        <img src="carte_jaune.png" alt="carte">
+        <img src="carte_tigresse.jpg" alt="carte">
+        <img src="carte_violette_3.png" alt="carte">
+        <img src="carte_sirene_1.png" alt="carte">
+        <img src="carte_verte.png" alt="carte">
+        <!-- On a résumé les types de cartes ici -->
+        <ul class="principal">
+          <li>
+                56 cartes NORMALES numérotées (1-14): noires, vertes, jaunes, violettes
+                <ul>
+                    <li>Couleurs faibles : Ce sont les cartes vertes, jaunes, et violettes. Elles perdent contre toutes les autres cartes du jeu. Mais quand une carte normale de couleur faible joue contre une autre carte du même type, alors la carte ayant la plus faible valeur numérique perd.</li>
+                    <li>Couleurs fortes : Ce sont les cartes noires. elles gagnent contre toutes les cartes normales couleurs faibles (peu importe leurs valeurs numériques) mais perdent contre toutes les cartes spéciales exceptée la carte fuite. Lorsqu'une carte noire joue contre une autre carte noire alors la carte avec la plus grande valeur numérique gagne .</li>
+                </ul>
+            </li>
+            <li>
+                14 cartes SPECIALES : Pirates (5 cartes), Sirènes (2 cartes), Skull King (1 carte), tigresse(1 carte), fuites (5 cartes)
+                <ul>
+                    <li>Cartes Pirates : Elles gagnent contre toutes les cartes normales et les cartes Sirènes, mais perdent contre la carte skull king. </li>
+                    <li>Cartes Sirènes : Elles gagnent contre toutes les cartes faibles et le skull king (ce dernier ayant un faible pour les Sirènes). En contre partie , les cartes Sirènes perdent contre les cartes Pirates.</li>
+                    <li>Carte skull king : Cette carte gagne contre toutes les autres cartes du jeu, à l'exception des cartes Sirènes. </li>
+                    <li>Cartes tigresses : Ces cartes ont une particularité car elles peuvent être jouer comme une carte pirate ou une carte fuite (le choix revient au joueur détenant la carte).
+                    <li>Cartes fuites : Ce sont les cartes neutres , qui perdent contre toutes les autres cartes du jeu </li>
+                    <li>NB : Lorsque 2 ou plusieurs cartes spéciales de même type jouent les unes contre les autres (Ex : pirate contre pirate , sirène contre sirène ...) alors c'est la carte spéciale jouée en prémière position qui gagne</li>
+                </ul>
+            </li>
+            <li>Hiérarchie : Skull King > Pirates > Sirènes( > Skull king) > Couleurs fortes > Couleur faibles > fuites</li>
+        </ul>
+
+        <h3>Déroulement d'une manche</h3>
+        <!-- On explique comment chaque manche se passe -->
+        <ul>
+          <li>Chaque joueur reçoit un nombre de cartes égal au numéro de la manche (Ex: manche 2 = deux carte par joueur)</li>
+          <li>Les joueurs misent combien de plis ils vont remporter</li>
+          <li>Chaque joueur joue une carte à tour de rôle</li>
+          <li>A la fin du tour, les cartes sont ensuite comparées</li>
+          <li>le joueur ayant joué la carte la plus forte remporte le plis</li>
+          <li>Ainsi de suite jusqu'à l'épuisement des cartes de la manche</li>
+        </ul>
+
+        <h3>Points (Score selon Rascal)</h3>
+        <ul>
+          <li>Au debut de chaque manche un nombre de points maximum à gagner est mis en jeu (manche 2 = 20points, manche 5 = 50points ...) </li>  
+          <li>Prévision correcte (le nombre misé au debut de la manche est égal au nombre de plis remporté) : le joueur remporte la totalité des points</li>
+          <li>Prévision presque correcte ( le nombre misé au debut de la manche et le nombre de plis remporté ont une différence de 1 ) : le joueur remporte la moitié des points </li>
+          <li>Prévision incorrecte ( le nombre misé au debut de la manche et le nombre de plis remporté ont une différence de 2 ou plus ) : le jouer ne remporte aucun points</li>
+        </ul>
+
+        <h3>Remarque</h3>
+        <!-- Ici on parle de nos choix perso pour le projet -->
+        <p>
+          On a simplifié certaines règles pour que ce soit plus gérable en Python :
+          par exemple, pas de Scary Mary, et on a créé nos propres visuels pour les cartes normales et spéciales.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="footer">
+    <p>&copy; 2025 Projet de Concrétisation</p>
+  </footer>
+</body>
+</html>

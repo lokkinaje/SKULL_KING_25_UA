@@ -1,0 +1,143 @@
+/* On remet les valeurs de base à zéro pour tout le monde */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* En-tête du site */
+.header {
+  background-color: #4f4fc0;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  color: #69c1da;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #69c1da;
+}
+
+/* Section principale d'accueil ou de contenu */
+.section{
+  background: linear-gradient(to right, #141e30, #243b55);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.texte h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #69c1da;
+}
+
+.texte h3 {
+  font-size: 30px;
+  color: #69c1da;
+  margin-top: 40px;
+}
+
+.texte p {
+  font-size: 25px;
+  max-width: 800px;
+  margin: auto;
+  color: #d1d1d1;
+}
+
+.texte ul {
+  font-size: 20px;
+  text-align: left;
+  color: #f0f0f0;
+  padding-left: 20px;
+  margin-top: 15px;
+  max-width: 700px; 
+  margin: 20px auto;
+}
+img{
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  display: inline-block;
+}
+/* Boutons cliquables */
+.btn {
+  background-color: #69c1da;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Pied de page */
+.footer {
+  background-color: #1f1f1f;
+  color: #999;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .hero-text h3 {
+    font-size: 24px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
