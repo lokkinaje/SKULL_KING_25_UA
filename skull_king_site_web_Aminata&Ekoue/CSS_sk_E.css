@@ -1,0 +1,131 @@
+/* On remet les valeurs de base à zéro pour tout le monde */
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+/* En-tête du site */
+.header {
+  background-color: #4f4fc0;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  color: #69c1da;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav li a:hover {
+  color: #69c1da;
+}
+.section {
+/* Fond en dégradé horizontal (inspiration : Ready Player Me) pour donner un effet moderne */
+  background: linear-gradient(to right, #141e30, #243b55);
+  padding: 60px 0;
+  text-align: center;
+}
+/* Section principale d'accueil ou de contenu */
+.texte h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #69c1da;
+/* Animation d'entrée du titre h2 : il glisse depuis la droite */
+        animation-duration: 3s;
+        animation-name: slidein;
+      }
+/* Définition de l'animation 'slidein' utilisée pour faire apparaître les titres en glissant */
+      @keyframes slidein {
+        from {
+          margin-left: 100%;
+          width: 300%;
+        }
+      
+        to {
+          margin-left: 0%;
+          width: 100%;
+        }
+      }
+.texte p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+  color: #d1d1d1;
+}
+
+.texte img{
+    max-width: 50%; 
+    height: auto; 
+    border-radius: 15px; 
+    margin: 30px 0;
+}
+/* Boutons cliquables */
+.btn {
+  background-color: #69c1da;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+/* Pied de page */
+.footer {
+  background-color: #1f1f1f;
+  color: #999;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+/* Version mobile */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .texte h2 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}

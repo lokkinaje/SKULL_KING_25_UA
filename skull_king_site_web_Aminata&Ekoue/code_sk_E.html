@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binôme - Skull King</title>
+  <link rel="stylesheet" href="CSS_code_sk_E.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Skull King : Code Python</h1>
+      <nav>
+        <ul class="nav">
+          <li><a href="index_sk_E.html">Accueil</a></li>
+          <li><a href="binome_sk_E.html">Le Binôme</a></li> 
+          <li><a href="regles_sk_E.html">Règles</a></li>
+          <li><a href="code_sk_E.html">Code</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="section">
+    <div class="container">
+        <div class="texte">
+            <h2>Détails de notre code Python </h2>
+        
+        <div class="introduction">
+            <p>Pour la programmation de notre jeu Skull King nous avons fait plusieurs fonctions pour une meilleure cohérance</p>
+        </div>
+        <div class="explication">
+            <ul>
+                <li> Creation des cartes :  Chaque carte est représentée par une valeur numérique.
+                    <ul> 
+                        <li>Les cartes normales : Sont représentées par les nombres allant de 1-14 (les cartes noires), 101-114 (les cartes vertes), 201-214 (les cartes violettes), 301-314 (les cartes jaunes)
+                            <ul>
+                                <li><em>Le prémier chiffre représente la couleur et les deux autres chiffres représentent la valeur de la carte (EXEMPLE_1: 304 = carte jaune (3) de valeur 4 (04). D'où 304, EXEMPLE_2 : 14 = carte noire de valeur 14 . D'où 14)</em> </li>
+                            </ul>
+                        </li>
+                        <li>
+                          Les cartes spéciales : Sont représentées par les nombres allant de 401-405 (les cartes Pirates), 601-605 (les cartes fuites), 501-503 (les cartes Sirènes), 700 (la carte tigresse) et 999 (le skull king)
+                        </li>
+                    </ul> 
+                  <li>
+                      Fonction init_joueurs <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L42">(def init_joueurs)</a>
+                      <p> Dans cette fonction on demande à l'utilisateur le nombre de joueurs (maximum 6) , son nom etant le premier nom saisi (les autres joueurs seront donc des ia) et le nombre de manche (maximum 15) que l'utilisateur souhaite réalisé.</p>
+                  </li>
+                  <li>
+                    Fonction tirage <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L67">(def tirage)</a>
+                    <p>Dans un premier temps la fonction tirage vérifie si la liste contenant toutes les cartes du jeu (fu) est vide alors elle affiche <em>plus de cartes dans la pioche</em> (ce teste est fait juste pour anticiper un éventuel bug). Sinon la fonction tire une carte au hasard dans la pioche qu'on copie dans une variable <em>carte</em> ensuite on cherche l'indice de cette carte dans <em>fu</em> et on supprime le carte à cet indice ,de ce fait la valeur de la carte choisie est conservée et est en même temps supprimé de <em>fu</em> pourqu'une carte ne soit pas dans la main de deux joueurs différents en même temps .</p>
+                  </li> 
+                  <li>
+                    Fonction abs <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L147">(def abs)</a>
+                    <p>Cette fonction calcul la valeur absolue</p>
+                  </li>
+                  <li>
+                    Fonction mise <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L151">(def mise)</a>
+                    <p>Cette fonction demande la mise de lutilisateur sa mise et vérifie sa conformité et par la suite le dictionnaire <em>dico_j</em> contiendra le nom de chaque joueur associé à sa mise</p>
+                  </li>
+                  <li>
+                    Fonction choisir_carte <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L159">(def_choisir_carte)</a>
+                    <p>Cette fonction demande à l'utilisateur de choisir une carte parmi les cartes de sa main et vérifie si elle est présente . Ensuite elle supprime de la main et l'ajoute dans le <em>depot(pour la comparaison)</em></p>
+                  </li>
+                  <li>
+                    Fonction debut_jeu <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L80">(def debut_jeu)</a>
+                    <p>Cette fonction gère le déroulement complet du jeu : elle demande le nombre de manches, distribue les cartes à chaque joueur, gère les mises (utilisateur et IA), fait jouer les cartes à chaque tour, détermine le gagnant du tour, met à jour les scores et les enregistre dans un fichier CSV.</p>
+                  </li>
+
+                  <li>
+                    Fonction comparaison <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L238">(def comparaison)</a>
+                    <p>Cette fonction compare les cartes jouées pendant un tour pour déterminer la carte la plus forte selon les règles du jeu Skull King,  ex: <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L387">def(comparaison_pirate_vers_tous)</a>. Elle utilise des fonctions spécifiques selon la couleur ou le type de carte.</p>
+                  </li>
+
+                  <li>
+                    Fonction tableau_des_scores <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L435">(def tableau_des_scores)</a>
+                    <p>Elle calcule les points gagnés par chaque joueur à la fin d'une manche en fonction de leur mise et du nombre de tours gagnés. Elle affiche aussi les scores et les stocke dans une liste globale.</p>
+                  </li>
+
+                  <li>
+                    Fonction enregistrer_scores_csv <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L457">(def enregistrer_scores_csv)</a>
+                    <p>Cette fonction écrit les scores finaux de chaque joueur dans un fichier CSV nommé <em>score_sking.csv</em>.</p>
+                  </li>
+                  <li>
+                    Fonction choisir_cartes_aleatoire <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L467">(def choisir_cartes_aleatoire)</a>
+                    <p>Cette fonction permet à une IA de choisir une carte de manière aléatoire parmi celles de sa main. Si elle n’a qu’une seule carte, elle la joue automatiquement. Sinon, elle en choisit une au hasard, la retire de sa main et l’ajoute au dépôt.</p>
+                  </li>
+
+                  <li>
+                    Fonction mise_automatique <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L487">(def mise_automatique)</a>
+                    <p>Cette fonction calcule automatiquement la mise d’un joueur IA en fonction de la composition de sa main. Elle évalue les cartes faibles, moyennes et fortes pour estimer une mise raisonnable selon la manche en cours.</p>
+                  </li>
+
+                  <li>
+                    Fonction choisir_cartes_automatique <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L522">(def choisir_cartes_automatique)</a>
+                    <p>Cette fonction permet à une IA de choisir une carte à jouer en fonction de la situation : si elle doit encore gagner des tours, elle joue une carte forte ; sinon, elle joue une carte aléatoire pour éviter de dépasser sa mise.</p>
+                  </li>
+
+                  <li>
+                    Fonction rotation_premier_joueur <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L578">(def rotation_premier_joueur)</a>
+                    <p>Elle fait tourner la liste des joueurs pour que le premier joueur change à chaque manche. Cela permet une rotation équitable du joueur qui commence.</p>
+                  </li>
+
+                  <li>
+                    Fonction vainqueur <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L593">(def vainqueur)</a>
+                    <p>Elle identifie le joueur ayant obtenu le score le plus élevé à la fin de toutes les manches et l'affiche comme le gagnant du jeu.</p>
+                  </li>
+
+                  <li>
+                    Fonction main <a href="https://github.com/Amina0072/Amina/blob/main/concretisation_sk_D_bis.py#L602">(def main)</a>
+                    <p>Il s'agit de la fonction principale qui lance le jeu. Elle appelle les fonctions d'initialisation et de déroulement du jeu, puis affiche le vainqueur.</p>
+                  </li>
+
+                                    
+            </ul>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+                      
+    <footer class="footer">
+        <p>&copy; 2025 Projet de Concrétisation</p>
+    </footer>
+</body>
+</html>
